@@ -20,7 +20,7 @@ class Helper
         {
             \DB::connection()->enableQueryLog();
             $result = $callback();
-            $queries = DB::getQueryLog();
+            $queries = \DB::getQueryLog();
             print_r($queries);
         }
         else
