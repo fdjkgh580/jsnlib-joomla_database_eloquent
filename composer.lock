@@ -1,0 +1,56 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "fb35f37fa879f0bc1e1ec0239bb88915",
+    "packages": [
+        {
+            "name": "jsnlib/ao",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fdjkgh580/jsnlib-ao.git",
+                "reference": "8a8b8e51ffd4b2213d4c267b90d6f6e97f3a1574"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fdjkgh580/jsnlib-ao/zipball/8a8b8e51ffd4b2213d4c267b90d6f6e97f3a1574",
+                "reference": "8a8b8e51ffd4b2213d4c267b90d6f6e97f3a1574",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jsnlib\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "easy use ArrayObject",
+            "keywords": [
+                "array",
+                "arrayobject",
+                "convert",
+                "object"
+            ],
+            "time": "2018-05-11T03:42:49+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": ">=7.2.0"
+    },
+    "platform-dev": []
+}

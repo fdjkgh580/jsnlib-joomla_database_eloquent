@@ -5,7 +5,8 @@
     "keywords": ["joomla", "model", "eloquent", "helper"],
     "license": "MIT",
     "require": {
-        "php": ">=7.2.0"
+        "php": ">=7.2.0",
+        "jsnlib/ao": ">=1.2.1"
     },
     "autoload": {
         "psr-4": {
