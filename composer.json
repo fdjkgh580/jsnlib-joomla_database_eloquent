@@ -1,7 +1,7 @@
 {
     "name": "jsnlib/joomla_database_eloquent",
     "type": "library",
-    "description": "輔助 Eloquent 在 Joomla! Model 中的使用 ",
+    "description": "輔助 Eloquent 在 Joomla! Model 中的使用",
     "keywords": ["joomla", "model", "eloquent", "helper"],
     "license": "MIT",
     "require": {
