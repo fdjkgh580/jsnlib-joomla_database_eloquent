@@ -1,0 +1,15 @@
+{
+    "name": "jsnlib/joomla_database_eloquent",
+    "type": "library",
+    "description": "輔助 Eloquent 在 Joomla! Model 中的使用 ",
+    "keywords": ["joomla", "model", "eloquent", "helper"],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jsnlib\\": "src\\"
+        }
+    }
+}
