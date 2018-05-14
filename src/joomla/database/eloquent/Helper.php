@@ -14,7 +14,7 @@ class Helper
      * @param  callable $callback 運行的主程序
      * @return \Jsnlib\Ao         取得 debug 結果或是運行 $callback() 的數據
      */
-    public  function proccess($isDebug = false, callable $callback): \Jsnlib\Ao
+    public  function proccess($isDebug = false, $callback)
     {
         if ($isDebug === true)
         {
@@ -26,6 +26,12 @@ class Helper
         else
         {
             $result = $callback();
+
+            // 直接返回數字
+            if (is_int($result))
+            {
+                return $result;
+            }
         }
 
         return new \Jsnlib\Ao($result);
@@ -37,10 +43,12 @@ class Helper
      * @param  string     $info_list list 取得複數 | info 取得單數
      * @return \Jsnlib\Ao            返回查詢結果 
      */
-    public  function selectResult(\Jsnlib\Ao $result, string $info_list): \Jsnlib\Ao
+    public  function selectResult($result, $info_list)
     {
         if ($info_list == "info")
         {
+            if (count($result) == 0) return $result;
+            
             return $result[0];
         }
         else if ($info_list == "list")
