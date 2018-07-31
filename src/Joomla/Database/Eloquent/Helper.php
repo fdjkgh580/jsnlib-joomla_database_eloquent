@@ -16,6 +16,11 @@ class Helper
     public static function setEloquentName(string $manager): void
     {
         self::$DB = $manager;
+
+        if (class_exists($manager) === false)
+        {
+            throw new \Exception("$manager is not exists");
+        }
     }
 
     /**
