@@ -1,12 +1,12 @@
 # jsnlib-joomla_database_eloquent
 輔助 Eloquent 在 Joomla! Model 中的使用
 
-##安裝
+## 安裝
 ````
 composer require jsnlib/joomla_database_eloquent
 ````
 
-##使用方式
+## 使用方式
 
 使用別名為 Helper
 ````php
@@ -23,7 +23,7 @@ Helper::proccess(true, function () use ($param)
 });
 ````
 
-##範例
+## 範例
 這裡示範一個連接的方式
 ````php
 require_once 'vendor/autoload.php';
