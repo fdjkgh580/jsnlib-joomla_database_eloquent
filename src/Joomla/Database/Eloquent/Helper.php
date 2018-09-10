@@ -1,26 +1,21 @@
 <?php
 namespace Jsnlib\Joomla\Database\Eloquent;
 
-
 /**
  * 輔助 Eloquent 在 Model 中的使用
  */
 class Helper
 {
-    protected static $DB;
+    protected static $dbConnection;
 
     /**
-     * 由外部設定 Eloquent 名稱。為了讓更多 PHP 版本支援，所以不在此類別作依賴，而是由外部指定內部的靜態類別。
-     * @param string $manager 通常是 Illuminate\Database\Capsule\Manager
+     * 連線 Eloquent
+     * @param  \Illuminate\Database\MySqlConnection $connection 
      */
-    public static function setEloquentName(string $manager): void
+    public static function connectionEloquent(\Illuminate\Database\MySqlConnection $connection)
     {
-        self::$DB = $manager;
-
-        if (class_exists($manager) === false)
-        {
-            throw new \Exception("$manager is not exists");
-        }
+        self::$dbConnection = $connection;
+        return true;
     }
 
     /**
@@ -33,17 +28,19 @@ class Helper
      */
     public static function proccess($isDebug = false, $callback)
     {
+        $dbConnection = self::$dbConnection;
+
         if ($isDebug === true)
         {
-            $DB = self::$DB;
-            $DB::connection()->enableQueryLog();
-            $result  = $callback();
-            $queries = $DB::getQueryLog();
+            $dbConnection->enableQueryLog();
+            $result  = $callback($dbConnection);
+            $queries = $dbConnection->getQueryLog();
             print_r($queries);
+            die;
         }
         else
         {
-            $result = $callback();
+            $result = $callback($dbConnection);
 
             // 直接返回數字
             if (is_int($result))
