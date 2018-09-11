@@ -43,7 +43,7 @@ class Helper
             $result = $callback($dbConnection);
 
             // 直接返回數字
-            if (is_int($result))
+            if (is_numeric($result))
             {
                 return $result;
             }
